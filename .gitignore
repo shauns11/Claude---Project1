@@ -1,0 +1,5 @@
+# Secondary logs created by Stata batch mode (/e) in the project root
+/*.log
+
+# Stata datasets (anywhere in the project)
+*.dta

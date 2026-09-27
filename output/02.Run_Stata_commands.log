@@ -1,0 +1,33 @@
+-------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  C:\CLAUDE\Projects\Project1\output\02.Run_Stata_commands.log
+  log type:  text
+ opened on:  27 Sep 2026, 09:50:12
+
+. 
+. di (2+2)
+4
+
+. di (2*2)
+4
+
+. di (4*4)
+16
+
+. 
+. 
+. local date `c(current_date)'
+
+. local time `c(current_time)'
+
+. display _newline "Run `date' at `time'"
+
+Run 27 Sep 2026 at 09:50:12
+
+. 
+. log close
+      name:  <unnamed>
+       log:  C:\CLAUDE\Projects\Project1\output\02.Run_Stata_commands.log
+  log type:  text
+ closed on:  27 Sep 2026, 09:50:12
+-------------------------------------------------------------------------------
