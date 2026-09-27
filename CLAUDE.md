@@ -59,17 +59,46 @@ Remote: `https://github.com/shauns11/Claude---Project1.git` (branch `main`). The
 
 ### First-time setup (new project)
 
-1. Create an empty repository on github.com (no README, .gitignore or licence).
-2. In PowerShell, from the project folder:
+1. Create `.gitignore` in the project root **before** the first commit, so ignored files are never committed:
+
+```text
+# Secondary logs created by Stata batch mode (/e) in the project root
+/*.log
+
+# Stata datasets (anywhere in the project)
+*.dta
+```
+
+2. Initialise the repository, check what will and won't be committed, then commit:
 
 ```powershell
-git init
+git init -b main
 git add .
+git status --short             # files to be committed
+git status --short --ignored   # lines starting "!!" are ignored (e.g. 01.log)
 git commit -m "Initial commit"
-git branch -M main
+```
+
+3. Create an **empty** repository on github.com (no README, .gitignore or licence) and choose Public or Private.
+4. Before pushing, confirm the remote exists and is empty. `git ls-remote` returns nothing for an empty repo and "Repository not found" if the URL is wrong, deleted or private without access:
+
+```powershell
+git ls-remote https://github.com/<username>/<repo>.git
+```
+
+5. Add the remote and push `main`:
+
+```powershell
 git remote add origin https://github.com/<username>/<repo>.git
 git push -u origin main
+git status -sb                 # should show: ## main...origin/main
 ```
+
+6. Update the `Remote:` line at the top of this section.
+
+Notes:
+- Never use `git push --force` against a repository that already has history unless you intend to permanently replace it.
+- Warnings like "LF will be replaced by CRLF" are Windows line-ending notices and can be ignored.
 
 ### Day-to-day
 
