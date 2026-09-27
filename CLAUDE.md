@@ -55,7 +55,7 @@ log close
 
 ## Git and GitHub
 
-Remote: `https://github.com/shauns11/Claude-code---Project1.git` (branch `main`). The GitHub CLI (`gh`) is not installed, so use plain `git` and the GitHub website.
+Remote: `https://github.com/shauns11/Claude---Project1.git` (branch `main`). The GitHub CLI (`gh`) is not installed, so use plain `git` and the GitHub website.
 
 ### First-time setup (new project)
 
